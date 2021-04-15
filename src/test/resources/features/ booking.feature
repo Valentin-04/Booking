@@ -4,4 +4,4 @@ Feature: Testing of Booking website
     When I write "Adele Old Town Apartment" to search field
     And Click Search button
     Then Check hotel name
-    Then Check rate of hotel
+    Then Check rate "9.7" of hotel

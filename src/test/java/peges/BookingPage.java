@@ -27,11 +27,11 @@ public class BookingPage {
 
     public void checkName() {
         String nameOfHotel = driver.findElement(By.xpath(String.format("//span[contains(text(),'%s')]", name))).getText();
-        Assert.assertEquals(nameOfHotel, "Adele Old Town Apartment");
+        Assert.assertEquals(nameOfHotel, name);
     }
 
-    public void checkRate() {
-        String rateOfHotel = driver.findElement(By.xpath("//span[contains(text(),'Adele Old Town Apartment')]/ancestor::div[contains(@class,'sr_item_content')]//div[contains(@class, 'bui-review-score__badge')]")).getText();
-        Assert.assertEquals(rateOfHotel, "9.7");
+    public void checkRate(String rate) {
+        String rateOfHotel = driver.findElement(By.xpath(String.format("//span[contains(text(),'%s')]/ancestor::div[contains(@class,'sr_item_content')]//div[contains(@class, 'bui-review-score__badge')]", name))).getText();
+        Assert.assertEquals(rateOfHotel, rate);
     }
 }

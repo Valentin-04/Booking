@@ -42,9 +42,9 @@ public class BookingSteps {
         bookingPage.checkName();
     }
 
-    @Then("Check rate of hotel")
-    public void checkRateOfHotel() {
-        bookingPage.checkRate();
+    @Then("Check rate {string} of hotel")
+    public void checkRateOfHotel(String rate) {
+        bookingPage.checkRate(rate);
     }
 
     @After
